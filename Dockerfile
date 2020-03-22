@@ -5,4 +5,4 @@ RUN apt-get install -y nginx-light libnginx-mod-rtmp ffmpeg
 
 COPY nginx.conf /etc/nginx/
 
-CMD nginx -g daemon off;
+CMD nginx -g 'daemon off;'
