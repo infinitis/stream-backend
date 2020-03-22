@@ -4,9 +4,8 @@ RUN apt-get update
 RUN apt-get install -y nginx-light libnginx-mod-rtmp ffmpeg
 
 COPY nginx.conf /etc/nginx/
+COPY var_template /etc/nginx/conf.d/
 
-RUN echo "push ${PUSH_ENDPOINT};" >> /etc/nginx/conf.d/var_template
+envsubst < /etc/nginx/conf.d/var_template > /etc/nginx/nginx.conf
 
-RUN envsubst < /etc/nginx/conf.d/var_template > /etc/nginx/nginx.conf
-
-CMD nginx -g 'daemon off;'
+CMD /bin/bash -c "envsubst < /etc/nginx/conf.d/var_template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
