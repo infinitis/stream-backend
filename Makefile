@@ -12,7 +12,7 @@ build_push_relay:
 	cd push_relay && $(MAKE) build
 
 run_endpoint:
-	cd endpoint && $(MAKE) build
+	cd endpoint && $(MAKE) run
 
 run_pull_relay:
 	cd pull_relay && $(MAKE) run
