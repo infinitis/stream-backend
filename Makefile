@@ -1,5 +1,9 @@
-build:
-	docker build -t stream-backend .
+build: build_push_relay
 
-run:
-	docker run -d -p 8080:80 -p 1935:1935 -e PUSH_ENDPOINT=$(PUSH_ENDPOINT) stream-backend
+run: run_push_relay
+
+build_push_relay:
+	cd push_relay && $(MAKE) build
+
+run_push_relay:
+	cd push_relay && $(MAKE) run
