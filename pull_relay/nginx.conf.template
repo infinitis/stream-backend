@@ -24,9 +24,6 @@ http {
 
 rtmp {
 	server {
-		listen 1935;
-		deny play all;
-
 		application src {
 			live off;
 			pull ${PULL_ENDPOINT};
