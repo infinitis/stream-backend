@@ -15,7 +15,6 @@ run_endpoint:
 	cd endpoint && $(MAKE) run
 
 run_pull_relay:
-	export PULL_ENDPOINT
 	cd pull_relay && $(MAKE) run
 
 run_push_relay:
