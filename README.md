@@ -2,9 +2,10 @@
 
 - [x] create w/ nginx + rtmp module
 	- [x] basic setup
+	- [x] setup hls
+	- [ ] setup basic node endpoint
 	- [ ] advanced settings/bitrates
-		- [ ] security considerations
-	- [ ] setup hls
+	- [ ] security considerations
 - [ ] create k8s cluster
 
 ### Later
