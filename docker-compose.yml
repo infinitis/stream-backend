@@ -15,6 +15,7 @@ services:
     image: stream-backend-pull-relay
     ports:
       - "8080:80"
+      - "1936:1935"
   push_relay:
     build:
       context: ./push_relay
