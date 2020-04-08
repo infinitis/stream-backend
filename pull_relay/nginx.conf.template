@@ -24,6 +24,8 @@ http {
 
 rtmp {
 	server {
+		listen 1935;
+		
 		application src {
 			live off;
 			pull ${PULL_ENDPOINT} name=test static live=1;
