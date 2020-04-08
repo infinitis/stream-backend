@@ -28,7 +28,7 @@ rtmp {
 		
 		application src {
 			live on;
-			pull ${PULL_ENDPOINT} name=test static live=1;
+			pull ${PULL_ENDPOINT} static live=1;
 
 			hls on;
 			hls_path /tmp/hls;
