@@ -27,7 +27,7 @@ rtmp {
 		listen 1935;
 		
 		application src {
-			live off;
+			live on;
 			pull ${PULL_ENDPOINT} name=source static live=1;
 
 			hls on;
