@@ -25,8 +25,9 @@ http {
 rtmp {
 	server {
 		application src {
-			live on;
-			pull ${PULL_ENDPOINT};
+			live off;
+			pull ${PULL_ENDPOINT} static;
+			
 			exec ffmpeg -i ${PULL_ENDPOINT}
               -c:a aac -b:a 32k  -c:v libx264 -b:v 128K -f flv rtmp://localhost/hls/$name_low
               -c:a aac -b:a 64k  -c:v libx264 -b:v 256k -f flv rtmp://localhost/hls/$name_mid
