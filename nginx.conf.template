@@ -27,25 +27,8 @@ rtmp {
 		listen 1935;
 		
 		application src {
-			live off;
-			pull ${PULL_ENDPOINT} name=test static live=1;
-			
-			exec ffmpeg -i ${PULL_ENDPOINT}
-              -c:a aac -b:a 32k  -c:v libx264 -b:v 128K -f flv rtmp://localhost/hls/$name_low
-              -c:a aac -b:a 64k  -c:v libx264 -b:v 256k -f flv rtmp://localhost/hls/$name_mid
-              -c:a aac -b:a 128k -c:v libx264 -b:v 512K -f flv rtmp://localhost/hls/$name_hi;
-		}
-
-		application hls {
 			live on;
-			
-			hls on;
-			hls_path /tmp/hls;
-			hls_nested on;
-
-            hls_variant _low BANDWIDTH=160000;
-            hls_variant _mid BANDWIDTH=320000;
-            hls_variant _hi  BANDWIDTH=640000;
+			pull ${PULL_ENDPOINT} name=test static live=1;
 		}
 	}
 }
