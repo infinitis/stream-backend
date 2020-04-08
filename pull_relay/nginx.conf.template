@@ -24,11 +24,9 @@ http {
 
 rtmp {
 	server {
-		listen 1935;
-		
 		application src {
-			live on;
-			pull ${PULL_ENDPOINT} static live=1;
+			live off;
+			pull ${PULL_ENDPOINT} name=source static live=1;
 
 			hls on;
 			hls_path /tmp/hls;
