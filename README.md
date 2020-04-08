@@ -3,10 +3,9 @@
 - [x] create w/ nginx + rtmp module
 	- [x] basic setup
 	- [x] setup basic node endpoint
-	- [ ] setup hls
-	- [ ] move to docker-compose (easier testing)
-		- [ ] keep makefile for building images
-			- [ ] might need for k8s later
+	- [x] setup hls
+	- [x] move to docker-compose (easier testing)
+	- [ ] create basic client side browser implementation
 - [ ] create k8s cluster
 
 ### Later
