@@ -4,23 +4,19 @@ services:
   endpoint:
     build:
       context: ./endpoint
-    env_file: .env
     image: stream-backend-endpoint
     ports:
       - "1935:1935"
   pull_relay:
     build:
-      args:
-        BUILD_CONFIGURATION: ${PULL_ENDPOINT}
       context: ./pull_relay
-    env_file: .env
+    environment:
+      PULL_ENDPOINT: "rtmp://endpoint/live/test"
     image: stream-backend-pull-relay
     ports:
       - "8080:80"
   push_relay:
     build:
-      args:
-        BUILD_CONFIGURATION: ${PUSH_ENDPOINT}
       context: ./push_relay
     env_file: .env
     image: stream-backend-push-relay
