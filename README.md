@@ -6,6 +6,10 @@
 	- [x] setup hls
 	- [x] move to docker-compose (easier testing)
 	- [ ] create basic client side browser implementation
+		- [x] create basic functionality
+		- [ ] add to docker-compose
+			- [ ] env considerations (pass/subst in stream url)
+			- [ ] copy stream.client.js & index.html to nginx pull_relay
 - [ ] create k8s cluster
 
 ### Later
