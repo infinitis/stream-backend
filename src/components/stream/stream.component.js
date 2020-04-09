@@ -8,8 +8,21 @@ export default class Stream extends React.Component {
 		this.videoRef = React.createRef();
 	}
 	componentDidMount() {
-		console.log(hls);
-		console.log(new hls());
+		if(hls.isSupported()) {
+			const hls = new hls();
+			hls.loadSource("https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8");
+			hls.attachMedia(this.videoRef);
+			hls.on(Hls.Events.MANIFEST_PARSED,() => {
+				this.videoRef.play();
+			});
+		} else if(this.videoRef.canPlayType('application/vnd.apple.mpegurl')) {
+			this.videoRef.src = "https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8";
+			this.videoRef.addEventListener('loadmetadata', () => {
+				this.videoRef.play();
+			});
+		} else {
+			throw new Error("hls not supported");
+		}
 	}
 	render() {
 		return createElement("div",{className:style.container},
