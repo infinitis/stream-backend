@@ -2,7 +2,7 @@ build:
 	docker build -t stream-backend-client .
 
 run:
-	docker run -d -p "8080:8080" --name stream-backend-client-test stream-backend-client
+	docker run -d -p "8080:8080" --read-only -v `pwd`:/home/node/app --name stream-backend-client-test stream-backend-client
 
 stop:
 	docker stop stream-backend-client-test
