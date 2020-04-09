@@ -7,6 +7,9 @@ export default class Stream extends React.Component {
 		super(props);
 		this.videoRef = React.createRef();
 	}
+	componentDidMount() {
+		console.log(hls);
+	}
 	render() {
 		return createElement("div",{className:style.container},
 			createElement("video",{ref:this.videoRef})
