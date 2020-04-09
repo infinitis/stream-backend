@@ -15,4 +15,4 @@ package_extract:
 	docker stop client_package_init
 
 inspect:
-	docker exec -it $(docker container ls -q -f name=client_package_init) /bin/bash
+	docker exec -it $$(docker container ls -q -f name=client_package_init) /bin/bash
