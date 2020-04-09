@@ -9,6 +9,7 @@ export default class Stream extends React.Component {
 	}
 	componentDidMount() {
 		console.log(hls);
+		console.log(hls.Hls());
 	}
 	render() {
 		return createElement("div",{className:style.container},
