@@ -1,3 +1,5 @@
+import hls from 'hls.js';
+
 import style from './stream.css';
 
 export default class Stream extends React.Component {
