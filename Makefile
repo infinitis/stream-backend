@@ -2,11 +2,11 @@ build:
 	docker build -t stream-backend-client .
 
 run:
-	docker run -d -p "8080:8080" stream-backend-client
+	docker run -d -p "8080:8080" --name stream-backend-client-test stream-backend-client
 
 stop:
-	docker stop stream-backend-client
-	docker rm stream-backend-client
+	docker stop stream-backend-client-test
+	docker rm stream-backend-client-test
 
 package_init:
 	docker run -d --name client_package_init node:latest tail -f /dev/null
