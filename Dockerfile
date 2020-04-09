@@ -13,7 +13,7 @@ COPY --from=builder /app/node_modules ./node_modules/
 COPY package.json .
 COPY package-lock.json .
 COPY src/ src/
-COPY test/ test/
+# COPY test/ test/
 COPY index.html .
 COPY webpack.config.js .
 COPY webpack.dev.config.js .
