@@ -13,7 +13,7 @@ window.streamInit = (anchor) => {
 		throw new Error("Invalid anchor");
 	}
 	
-	const store = createStore(reducers,null);
+	const store = createStore(reducers);
 	render(
 		createElement(Provider,{store},
 			createElement(main,null)
