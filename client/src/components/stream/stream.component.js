@@ -8,7 +8,7 @@ export default class Stream extends React.Component {
 		this.videoRef = React.createRef();
 	}
 	componentDidMount() {
-		console.log(hls);
+		alert(__STREAM_URL__);
 		if(hls.isSupported()) {
 			const Hls = new hls();
 			Hls.loadSource("https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8");
