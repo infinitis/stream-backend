@@ -20,10 +20,15 @@ http {
             add_header Access-Control-Allow-Origin *;
         }
 
+        
         location / {
-        	index	index.html;
-	        root /var/www/;
+    		index	index.html;
+        	root /var/www/;
         }
+
+        location ~ \.js {
+		    add_header  Content-Type    application/x-javascript;
+		}
     }
 }
 
