@@ -4,6 +4,9 @@ build:
 run:
 	docker run -d -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name stream-backend-client-test stream-backend-client
 
+start: build
+	-docker run -it --rm -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name stream-backend-client-test stream-backend-client
+
 stop:
 	docker stop stream-backend-client-test
 	docker rm stream-backend-client-test
