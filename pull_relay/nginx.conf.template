@@ -9,7 +9,7 @@ http {
 	server {
 		listen 80;
 		
-		location /hls {
+		location /dash {
 			types {
 				application/vnd.apple.mpegurl m3u8;
 			}
@@ -40,9 +40,9 @@ rtmp {
 			live on;
 			pull ${PULL_ENDPOINT} name=source static live=1;
 
-			hls on;
-			hls_path /tmp/hls;
-			hls_nested on;
+			dash on;
+			dash_path /tmp/dash;
+			dash_nested on;
 		}
 	}
 }
