@@ -27,7 +27,8 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			React:'react',
 			createElement:['react','createElement']
-		})
+		}),
+		new webpack.EnvironmentPlugin(['__STREAM_URL__'])
 	],
 	resolve: {
 		modules:[
