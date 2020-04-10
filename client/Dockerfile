@@ -18,7 +18,7 @@ COPY webpack.config.js .
 COPY webpack.dev.config.js .
 COPY webpack.prod.config.js .
 
-ENV __STREAM_URL__ http://pull_relay/hls/source/index.m3u8
+ENV __STREAM_URL__ /hls/source/index.m3u8
 RUN npm run build
 
 # RUN npm run test
