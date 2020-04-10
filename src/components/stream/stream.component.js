@@ -30,6 +30,7 @@ export default class Stream extends React.Component {
 	manifest_found() {
 		console.log('play');
 		console.log(this.videoRef);
+		debugger;
 		this.videoRef.play();
 	}
 	handle_hls_error(event,data) {
