@@ -19,6 +19,14 @@ http {
 			# To avoid issues with cross-domain HTTP requests (e.g. during development)
             add_header Access-Control-Allow-Origin *;
         }
+
+        root /var/www/
+
+        location ~* \.(?:js)$ { }
+
+        location / {
+        	index	index.html;
+        }
     }
 }
 
