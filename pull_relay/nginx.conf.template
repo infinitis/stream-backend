@@ -20,10 +20,10 @@ http {
             add_header Access-Control-Allow-Origin *;
         }
 
+    	root /var/www/;
         
         location / {
     		index	index.html;
-        	root /var/www/;
         }
 
         location ~ \.js {
