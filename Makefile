@@ -6,7 +6,7 @@ run:
 
 extract: build run
 	docker cp stream-backend-client-test:/home/node/app/stream.client.min.js ./stream.client.min.js
-		$(MAKE) stop
+	$(MAKE) stop
 
 start: build
 	-docker run -it --rm -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name stream-backend-client-test stream-backend-client
