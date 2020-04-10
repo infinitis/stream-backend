@@ -22,7 +22,7 @@ http {
 
         location / {
         	index	index.html;
-	        root /var/www/
+	        root /var/www/;
         }
     }
 }
