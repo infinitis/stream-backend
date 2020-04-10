@@ -4,8 +4,7 @@ import {stream} from '../stream/stream.js';
 
 export default class Main extends React.Component {
 	render() {
-		return createElement("div",null,
-			createElement("span",null,"Test SPAN"),
+		return createElement("div",{className:style.container},
 			createElement(stream,null)
 		);
 	}
