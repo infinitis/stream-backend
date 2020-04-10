@@ -11,7 +11,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "hls.js": "^0.13.2",
+    "dashjs": "^3.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
