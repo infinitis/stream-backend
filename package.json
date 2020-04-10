@@ -5,6 +5,7 @@
   "main": "stream.client.min.js",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
+    "build:dev": "webpack --config webpack.dev.config.js",
     "start": "webpack-dev-server --config webpack.dev.config.js --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
