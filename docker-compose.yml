@@ -5,7 +5,7 @@ services:
     build:
       context: ./client
     environment:
-      __STREAM_URL__: "http://pull_relay/hls/source/index.m3u8
+      __STREAM_URL__: "http://pull_relay/hls/source/index.m3u8"
     image: stream-backend-client
     ports:
       - "8080:8080"
