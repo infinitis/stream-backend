@@ -1,0 +1,6 @@
+:local(.container) {
+	width:100vw;
+	height:100vh;
+	overflow:none;
+	margin:0;
+}
