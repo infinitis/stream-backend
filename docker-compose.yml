@@ -1,14 +1,6 @@
 version: "3.7"
 
 services:
-  client:
-    build:
-      context: ./client
-    environment:
-      __STREAM_URL__: "http://pull_relay/hls/source/index.m3u8"
-    image: stream-backend-client
-    ports:
-      - "8080:8080"
   endpoint:
     build:
       context: ./endpoint
@@ -22,7 +14,7 @@ services:
       PULL_ENDPOINT: "rtmp://endpoint/live/test"
     image: stream-backend-pull-relay
     ports:
-      - "8081:80"
+      - "8080:80"
       - "1936:1935"
   push_relay:
     build:
