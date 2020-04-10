@@ -13,7 +13,7 @@ export default class Stream extends React.Component {
 		const player = MediaPlayer().create();
 		console.log(player);
 		console.log(this.videoRef);
-		player.initialize(this.videoRef,url,true)
+		player.initialize(this.videoRef.current,url,true)
 	}
 	render() {
 		return createElement("div",{className:style.container},
