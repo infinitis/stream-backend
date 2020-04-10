@@ -15,8 +15,8 @@ export default class Stream extends React.Component {
 			const Hls = new hls();
 			Hls.loadSource(process.env.__STREAM_URL__);
 			Hls.attachMedia(player);
-			Hls.on(hls.Events.MANIFEST_PARSED,manifest_found);
-			Hls.on(hls.Events.ERROR,handle_hls_error);
+			Hls.on(hls.Events.MANIFEST_PARSED,this.manifest_found);
+			Hls.on(hls.Events.ERROR,this.handle_hls_error);
 			this.hls_instance = Hls;
 		} else if(player.canPlayType('application/vnd.apple.mpegurl')) {
 			player.src = process.env.__STREAM_URL__;
