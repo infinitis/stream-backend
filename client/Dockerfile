@@ -18,7 +18,7 @@ COPY webpack.config.js .
 COPY webpack.dev.config.js .
 COPY webpack.prod.config.js .
 
-ENV __STREAM_URL__ /hls/source/index.m3u8
+ENV __STREAM_URL__ /dash/source/index.mpd
 RUN npm run build:dev
 
 # RUN npm run test
