@@ -12,7 +12,9 @@ export default class Stream extends React.Component {
 			const Hls = new hls();
 			Hls.loadSource(process.env.__STREAM_URL__);
 			Hls.attachMedia(this.videoRef);
+			console.log('here1');
 			Hls.on(hls.Events.MANIFEST_PARSED,() => {
+				console.log('here');
 				this.videoRef.play();
 			});
 		} else if(this.videoRef.canPlayType('application/vnd.apple.mpegurl')) {
