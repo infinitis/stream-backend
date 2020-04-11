@@ -1,33 +1,43 @@
-STREAM_CLIENT_JS_FILENAME=stream.client.min.js
-BUILD_COMMAND=
+FILENAME=stream.client.min.js
+DEBUG_FILENAME=stream.client.js
+
+IMAGE_NAME=stream-backend-client-test
+
+PACKAGE_MODIFICATION_CONTAINER_NAME=client_package_init
+
+BUILD_ARGS=
+DEBUG_BUILD_ARGS='--build-arg BUILD_COMMAND=build:dev '
 
 build:
-	docker build -t stream-backend-client $(BUILD_COMMAND) .
+	docker build -t stream-backend-client $(BUILD_ARGS) .
 
 run:
-	docker run -d -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name stream-backend-client-test stream-backend-client
+	docker run -d -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name $(IMAGE_NAME) stream-backend-client
 
 extract: build run
-	docker cp stream-backend-client-test:/home/node/app/$(STREAM_CLIENT_JS_FILENAME) ./$(STREAM_CLIENT_JS_FILENAME)
+	docker cp $(IMAGE_NAME):/home/node/app/$(FILENAME) ./$(FILENAME)
 	$(MAKE) stop
 
+extract-dev:
+	$(MAKE) extract FILENAME=$(DEBUG_FILENAME) BUILD_ARGS=$(DEBUG_BUILD_ARGS)
+
 start: build
-	-docker run -it --rm -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name stream-backend-client-test stream-backend-client
+	-docker run -it --rm -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name $(IMAGE_NAME) stream-backend-client
 
 stop:
-	docker stop stream-backend-client-test
-	docker rm stream-backend-client-test
+	docker stop $(IMAGE_NAME)
+	docker rm $(IMAGE_NAME)
 
 package_init:
-	docker run -d --name client_package_init node:latest tail -f /dev/null
-	docker cp package.json client_package_init:/home/node/
-	docker cp package-lock.json client_package_init:/home/node/
+	docker run -d --name $(PACKAGE_MODIFICATION_CONTAINER_NAME) node:latest tail -f /dev/null
+	docker cp package.json $(PACKAGE_MODIFICATION_CONTAINER_NAME):/home/node/
+	docker cp package-lock.json $(PACKAGE_MODIFICATION_CONTAINER_NAME):/home/node/
 
 package_extract:
-	docker cp client_package_init:/home/node/package.json ./package.json
-	docker cp client_package_init:/home/node/package-lock.json ./package-lock.json
-	docker stop client_package_init
-	docker rm client_package_init
+	docker cp $(PACKAGE_MODIFICATION_CONTAINER_NAME):/home/node/package.json ./package.json
+	docker cp $(PACKAGE_MODIFICATION_CONTAINER_NAME):/home/node/package-lock.json ./package-lock.json
+	docker stop $(PACKAGE_MODIFICATION_CONTAINER_NAME)
+	docker rm $(PACKAGE_MODIFICATION_CONTAINER_NAME)
 
 inspect:
-	docker exec -it $$(docker container ls -q -f name=client_package_init) /bin/bash
+	docker exec -it $$(docker container ls -q -f name=$(PACKAGE_MODIFICATION_CONTAINER_NAME)) /bin/bash
