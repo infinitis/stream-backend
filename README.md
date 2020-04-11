@@ -7,6 +7,14 @@
 - [ ] create k8s cluster
 	- [x] add letsencrypt
 	- [ ] create yamls
+		- [ ] setup registry in k8s
+			- [ ] setup new repo
+			- [ ] point registry.infiniteadaptability.org to big server
+			- [ ] verify vhosts works
+			- [ ] update registry to use certs
+		- [ ] login to registry from dev (using https)
+		- [ ] figure out best way to push images to registry
+		- [ ] figure out space/storage requirements best practices
 	- [ ] push live
 
 ### Later
