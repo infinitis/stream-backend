@@ -1,11 +1,14 @@
+STREAM_CLIENT_JS_FILENAME=stream.client.min.js
+BUILD_COMMAND=
+
 build:
-	docker build -t stream-backend-client .
+	docker build -t stream-backend-client $(BUILD_COMMAND) .
 
 run:
 	docker run -d -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name stream-backend-client-test stream-backend-client
 
 extract: build run
-	docker cp stream-backend-client-test:/home/node/app/stream.client.js ./stream.client.js
+	docker cp stream-backend-client-test:/home/node/app/$(STREAM_CLIENT_JS_FILENAME) ./$(STREAM_CLIENT_JS_FILENAME)
 	$(MAKE) stop
 
 start: build
