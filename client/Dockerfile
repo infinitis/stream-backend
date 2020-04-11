@@ -19,7 +19,8 @@ COPY webpack.dev.config.js .
 COPY webpack.prod.config.js .
 
 ENV __STREAM_URL__ /dash/source/index.mpd
-RUN npm run build:dev
+ARG BUILD_COMMAND=build
+RUN npm run $BUILD_COMMAND
 
 # RUN npm run test
 
