@@ -1,15 +1,19 @@
-STREAM_CLIENT_JS_FILENAME=stream.client.min.js
-CLIENT_JS_BUILD_COMMAND=
+CLIENT_JS_FILENAME=stream.client.min.js
 
 build:
 	docker-compose build
 
 run-dev:
-	$(MAKE) run STREAM_CLIENT_JS_FILENAME=stream.client.js CLIENT_JS_BUILD_COMMAND=build:dev
+	cd client && $(MAKE) extract-dev
+	$(MAKE) start
 
 run: build
-	cd client && $(MAKE) extract BUILD_COMMAND=$(CLIENT_JS_BUILD_COMMAND)
-	mkdir -p pull_relay/wwwroot/
-	cp client/$(STREAM_CLIENT_JS_FILENAME) pull_relay/
+	cd client && $(MAKE) extract
+	$(MAKE) start
+	
+copy_client:
+	cp client/$(CLIENT_JS_FILENAME) pull_relay/
 	cp client/index.html pull_relay/
+
+start: copy_client
 	docker-compose up endpoint pull_relay
