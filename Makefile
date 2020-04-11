@@ -5,7 +5,7 @@ build:
 	docker-compose build
 
 run-dev:
-	$(MAKE) STREAM_CLIENT_JS_FILENAME=stream.client.js CLIENT_JS_BUILD_COMMAND=build:dev
+	$(MAKE) run STREAM_CLIENT_JS_FILENAME=stream.client.js CLIENT_JS_BUILD_COMMAND=build:dev
 
 run: build
 	cd client && $(MAKE) extract
