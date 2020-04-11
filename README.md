@@ -8,11 +8,7 @@
 	- [ ] create basic client side browser implementation
 		- [x] create basic functionality
 		- [x] add to docker-compose
-			- [x] env considerations (pass/subst in stream url)
-			- [x] copy stream.client.js & index.html to nginx pull_relay
-		- [ ] style
-			- [ ] quick, crude
-			- [ ] popout link for twitch chat?
+		- [x] style
 		- [ ] modify makefiles for easier dev/prod webpack switches
 - [ ] create k8s cluster
 	- [ ] add letsencrypt
