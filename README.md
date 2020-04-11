@@ -2,6 +2,8 @@
 
 ### To Do:
 - [x] create w/ nginx + rtmp module
+	- [ ] modify endpoint so only single key can push to it
+		- [ ] env ENDPOINT_KEY
 - [ ] create k8s cluster
 	- [ ] add letsencrypt
 	- [ ] create yamls
