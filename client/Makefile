@@ -1,5 +1,4 @@
 FILENAME=stream.client.min.js
-DEBUG_FILENAME=stream.client.js
 
 IMAGE_NAME=stream-backend-client-test
 
@@ -19,7 +18,7 @@ extract: build run
 	$(MAKE) stop
 
 extract-dev:
-	$(MAKE) extract FILENAME=$(DEBUG_FILENAME) BUILD_ARGS=$(DEBUG_BUILD_ARGS)
+	$(MAKE) extract BUILD_ARGS=$(DEBUG_BUILD_ARGS)
 
 start: build
 	-docker run -it --rm -p "8080:8080" --read-only -v `pwd`/src/:/home/node/app/src/ --name $(IMAGE_NAME) stream-backend-client
