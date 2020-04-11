@@ -35,5 +35,9 @@ module.exports = {
 			path.resolve('./src'),
 			path.resolve('./node_modules')
 		]
+	},
+	output: {
+		filename: 'stream.client.min.js',
+		path: path.resolve(__dirname,'./')
 	}
 };

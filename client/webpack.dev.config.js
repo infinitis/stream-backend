@@ -1,4 +1,3 @@
-const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.js');
 
@@ -7,9 +6,5 @@ module.exports = merge(baseConfig,{
 	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: './'
-	},
-	output: {
-		filename: 'stream.client.js',
-		path: path.resolve(__dirname,'./')
 	}
 });
