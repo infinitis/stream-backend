@@ -1,17 +1,11 @@
 ## Stream Backend Project
 
+### To Do:
 - [x] create w/ nginx + rtmp module
-	- [x] basic setup
-	- [x] setup basic node endpoint
-	- [x] setup hls
-	- [x] move to docker-compose (easier testing)
-	- [ ] create basic client side browser implementation
-		- [x] create basic functionality
-		- [x] add to docker-compose
-		- [x] style
-		- [ ] modify makefiles for easier dev/prod webpack switches
 - [ ] create k8s cluster
 	- [ ] add letsencrypt
+	- [ ] create yamls
+	- [ ] push live
 
 ### Later
 - [ ] integrate w/ bitcoin/lightning project
