@@ -3,7 +3,7 @@ CLIENT_JS_FILENAME=stream.client.min.js
 build:
 	docker-compose build
 
-run-dev:
+run-dev: build
 	cd client && $(MAKE) extract-dev
 	$(MAKE) start
 
