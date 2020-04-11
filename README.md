@@ -5,7 +5,7 @@
 	- [ ] modify endpoint so only single key can push to it
 		- [ ] env ENDPOINT_KEY
 - [ ] create k8s cluster
-	- [ ] add letsencrypt
+	- [x] add letsencrypt
 	- [ ] create yamls
 	- [ ] push live
 
