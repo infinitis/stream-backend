@@ -5,6 +5,19 @@ events {
 	# multi_accept on;
 }
 
+http {
+	server {
+		listen 8080;
+		
+		location /auth {
+			if ($arg_key = '${ENDPOINT_KEY}') {
+				return 201;
+			}
+			return 404;
+		}
+	}
+}
+
 rtmp {
 	server {
 		listen 1935;
@@ -12,6 +25,7 @@ rtmp {
 		application live {
 			live on;
 			record off;
+			on_publish http://localhost:8080/auth;
 		}
 	}
 }
