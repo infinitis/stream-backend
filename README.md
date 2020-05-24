@@ -1,5 +1,16 @@
 ## Stream Backend Project
 
+Environmental Variables Required:
+
+endpoint:
+- ENDPOINT_KEY
+
+pull_relay:
+- PULL_ENDPOINT
+
+push_relay:
+- PUSH_ENDPOINT
+
 ### To Do:
 - [x] create w/ nginx + rtmp module
 	- [ ] modify endpoint so only single key can push to it
