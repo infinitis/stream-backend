@@ -4,6 +4,8 @@ services:
   endpoint:
     build:
       context: ./endpoint
+    environment:
+      ENDPOINT_KEY: "wheorihweoir"
     image: stream-backend-endpoint
     ports:
       - "1935:1935"
@@ -11,7 +13,7 @@ services:
     build:
       context: ./pull_relay
     environment:
-      PULL_ENDPOINT: "rtmp://endpoint/live/test"
+      PULL_ENDPOINT: "rtmp://endpoint/live/"
     image: stream-backend-pull-relay
     ports:
       - "8080:80"
