@@ -15,7 +15,7 @@ http {
 		listen 8080;
 		
 		location /auth {
-			if (\$arg_key = '$ENDPOINT_KEY') {
+			if (\$arg_psk = '$ENDPOINT_KEY') {
 				return 201;
 			}
 			return 401;
