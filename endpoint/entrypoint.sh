@@ -15,7 +15,7 @@ http {
 		listen 8080;
 		
 		location /auth {
-			if (\$arg_key = '$ENDPOINT_KEY') {
+			if (\$key = '$ENDPOINT_KEY') {
 				return 201;
 			}
 			return 404;
@@ -31,6 +31,7 @@ rtmp {
 			live on;
 			record off;
 			on_publish http://localhost:8080/auth;
+			on_play http://localhost:8080/auth;
 		}
 	}
 }
