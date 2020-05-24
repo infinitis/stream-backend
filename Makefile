@@ -12,7 +12,8 @@ copy_client:
 	cp client/index.html pull_relay/
 
 run: copy_client
-	docker-compose up --build endpoint pull_relay
+	# docker-compose up --build endpoint pull_relay
+	docker-compose up --build endpoint
 
 push:
 	cd endpoint && $(MAKE) push
