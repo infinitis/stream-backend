@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cat > /etc/nginx/nginx.conf << EOF
 include /etc/nginx/modules-enabled/*.conf;
 
 events {
@@ -10,7 +15,7 @@ http {
 		listen 8080;
 		
 		location /auth {
-			if (\$arg_key = '${ENDPOINT_KEY}') {
+			if (\$arg_key = '$ENDPOINT_KEY') {
 				return 201;
 			}
 			return 404;
@@ -29,3 +34,8 @@ rtmp {
 		}
 	}
 }
+EOF
+
+cat /etc/nginx/nginx.conf
+
+nginx -g 'daemon off;'
