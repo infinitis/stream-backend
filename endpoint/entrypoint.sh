@@ -15,8 +15,8 @@ http {
 		listen 8080;
 		
 		location /auth {
-			if (\$arg_psk = '$ENDPOINT_KEY') {
-				return 201;
+			if (\$arg_key = '$ENDPOINT_KEY') {
+				return 200;
 			}
 			return 401;
 		}
@@ -26,6 +26,7 @@ http {
 rtmp {
 	server {
 		listen 1935;
+		notify_method get;
 
 		application live {
 			live on;
