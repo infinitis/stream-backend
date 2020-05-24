@@ -6,15 +6,16 @@ endpoint:
 - ENDPOINT_KEY
 
 pull_relay:
+- ENDPOINT_KEY
 - PULL_ENDPOINT
 
 push_relay:
+- ENDPOINT_KEY
 - PUSH_ENDPOINT
 
 ### To Do:
 - [x] create w/ nginx + rtmp module
-	- [ ] modify endpoint so only single key can push to it
-		- [ ] env ENDPOINT_KEY
+- [ ] fix playback issues
 - [ ] create on k8s cluster
 	- [ ] push live
 
