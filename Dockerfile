@@ -6,7 +6,7 @@ RUN apt-get install -y nginx-light libnginx-mod-rtmp ffmpeg
 COPY index.html /var/www/
 COPY stream.client.min.js /var/www/
 
-COPY entrypoint /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 CMD /entrypoint.sh
