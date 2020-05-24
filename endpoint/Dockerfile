@@ -1,8 +1,8 @@
 FROM debian:latest
 
 RUN apt-get update
-RUN apt-get install -y nginx-light libnginx-mod-rtmp gettext-base
+RUN apt-get install -y nginx-light libnginx-mod-rtmp
 
-COPY nginx.conf.template /etc/nginx/conf.d
+COPY entrypoint.sh /entrypoint.sh
 
-CMD /bin/bash -c "envsubst < /etc/nginx/conf.d/nginx.conf.template > /etc/nginx/nginx.conf && cat /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
+CMD /entrypoint.sh
