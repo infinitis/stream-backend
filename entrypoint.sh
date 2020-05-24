@@ -18,7 +18,7 @@ http {
 			if (\$arg_key = '$ENDPOINT_KEY') {
 				return 201;
 			}
-			return 404;
+			return 401;
 		}
 	}
 }
