@@ -15,10 +15,7 @@ http {
 		listen 8080;
 		
 		location /auth {
-			if (\$key = false) {
-				return 404;
-			}
-			if (\$key = '$ENDPOINT_KEY') {
+			if (\$arg_key = '$ENDPOINT_KEY') {
 				return 201;
 			}
 			return 404;
