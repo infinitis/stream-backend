@@ -16,7 +16,7 @@ http {
 		
 		location /auth {
 			if (\$arg_key = '$ENDPOINT_KEY') {
-				return 200;
+				return 201;
 			}
 			return 401;
 		}
