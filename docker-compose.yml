@@ -13,6 +13,7 @@ services:
     build:
       context: ./pull_relay
     environment:
+      ENDPOINT_KEY: "wheorihweoir"
       PULL_ENDPOINT: "rtmp://endpoint/live/"
     image: stream-backend-pull-relay
     ports:
