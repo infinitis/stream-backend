@@ -4,6 +4,7 @@ build:
 	docker build -t $(IMAGE_NAME) .
 
 push: build
+	echo $(TAG)
 ifndef VERSION
 	$(error VERSION must be defined)
 endif
