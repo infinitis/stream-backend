@@ -5,7 +5,7 @@ set -euo pipefail
 if [[ -z "$PUSH_ENDPOINT" ]]; then
 	PUSH_ENDPOINT=""
 else
-	PUSH_ENDPOINT="push $PUSH_ENDPOINT name=$ENDPOINT_KEY;"
+	PUSH_ENDPOINT="push $PUSH_ENDPOINT;"
 fi
 
 cat > /etc/nginx/nginx.conf << EOF
@@ -17,7 +17,7 @@ http {
 		listen 8080;
 		
 		location /auth {
-			if ((\$arg_key = '$ENDPOINT_KEY') || (\$name = '$ENDPOINT_KEY')) {
+			if (\$arg_key = '$ENDPOINT_KEY') {
 				return 201;
 			}
 			return 401;
@@ -34,7 +34,6 @@ rtmp {
 			live on;
 			record off;
 			on_publish http://localhost:8080/auth;
-			on_play http://localhost:8080/auth;
 
 			$PUSH_ENDPOINT
 		}
