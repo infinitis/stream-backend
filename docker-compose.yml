@@ -6,7 +6,7 @@ services:
       context: ./endpoint
     environment:
       ENDPOINT_KEY: "wheorihweoir"
-      PUSH_ENDPOINT: "http://test.com"
+      PUSH_ENDPOINT: "rtmp://live-sea.twitch.tv/app/STREAM_KEY"
     image: stream-backend-endpoint
     ports:
       - "1935:1935"
