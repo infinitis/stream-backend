@@ -5,7 +5,7 @@ set -euo pipefail
 if [[ -z "$PUSH_ENDPOINT" ]]; then
 	PUSH_ENDPOINT=""
 else
-	PUSH_ENDPOINT="push $PUSH_ENDPOINT;"
+	PUSH_ENDPOINT="push $PUSH_ENDPOINT?key=$ENDPOINT_KEY;"
 fi
 
 cat > /etc/nginx/nginx.conf << EOF
