@@ -4,14 +4,11 @@ Environmental Variables Required:
 
 endpoint:
 - ENDPOINT_KEY
+- PUSH_ENDPOINT
 
 pull_relay:
 - ENDPOINT_KEY
 - PULL_ENDPOINT
-
-push_relay:
-- ENDPOINT_KEY
-- PUSH_ENDPOINT
 
 ### To Do:
 - [x] create w/ nginx + rtmp module

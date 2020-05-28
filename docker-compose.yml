@@ -6,7 +6,7 @@ services:
       context: ./endpoint
     environment:
       ENDPOINT_KEY: "wheorihweoir"
-      PUSH_ENDPOINT: ""
+      PUSH_ENDPOINT: "http://test.com"
     image: stream-backend-endpoint
     ports:
       - "1935:1935"
