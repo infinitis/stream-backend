@@ -16,7 +16,7 @@ push_relay:
 ### To Do:
 - [x] create w/ nginx + rtmp module
 - [x] reintegrate push_relay
-- [ ] fix playback issues
+- [ ] fix/investigate playback issues
 - [ ] k8s
 
 ### Later
