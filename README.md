@@ -7,7 +7,6 @@ endpoint:
 - PUSH_ENDPOINT (empty stream disables push)
 
 pull_relay:
-- ENDPOINT_KEY
 - PULL_ENDPOINT
 
 ### To Do:
