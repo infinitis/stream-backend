@@ -1,5 +1,5 @@
 CLIENT_JS_FILENAME=stream.client.min.js
-VERSION=`git describe 2>/dev/null || cat tag`
+export VERSION=`git describe 2>/dev/null || cat tag`
 
 build:
 	docker-compose build
