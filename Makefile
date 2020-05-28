@@ -16,5 +16,6 @@ run: copy_client
 	docker-compose up --build
 
 push:
+	echo "Pushing tag $(VERSION)"
 	cd endpoint && $(MAKE) push
 	cd pull_relay && $(MAKE) push
