@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+if [[ -z "$PUSH_ENDPOINT" ]]; then
+	PUSH_ENDPOINT=""
+else
+	PUSH_ENDPOINT="push $PUSH_ENDPOINT;"
+fi
+
 cat > /etc/nginx/nginx.conf << EOF
 include /etc/nginx/modules-enabled/*.conf;
 
@@ -28,6 +34,8 @@ rtmp {
 			record off;
 			on_publish http://localhost:8080/auth;
 			on_play http://localhost:8080/auth;
+
+			$PUSH_ENDPOINT
 		}
 	}
 }
