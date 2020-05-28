@@ -5,6 +5,7 @@ set -euo pipefail
 cat > /etc/nginx/nginx.conf << EOF
 include /etc/nginx/modules-enabled/*.conf;
 
+events {}
 http {
 	server {
 		listen 80;
