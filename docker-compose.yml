@@ -6,6 +6,7 @@ services:
       context: ./endpoint
     environment:
       ENDPOINT_KEY: "wheorihweoir"
+      PUSH_ENDPOINT: ""
     image: stream-backend-endpoint
     ports:
       - "1935:1935"
@@ -19,8 +20,3 @@ services:
     ports:
       - "8080:80"
       - "1936:1935"
-  push_relay:
-    build:
-      context: ./push_relay
-    env_file: .env
-    image: stream-backend-push-relay
