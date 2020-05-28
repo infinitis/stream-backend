@@ -39,7 +39,7 @@ rtmp {
 		
 		application src {
 			live on;
-			pull $PULL_ENDPOINT name=source static live=1;
+			pull $PULL_ENDPOINT?key=$ENDPOINT_KEY name=source static live=1;
 
 			dash on;
 			dash_path /tmp/dash;
