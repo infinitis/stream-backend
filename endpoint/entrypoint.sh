@@ -5,11 +5,6 @@ set -euo pipefail
 cat > /etc/nginx/nginx.conf << EOF
 include /etc/nginx/modules-enabled/*.conf;
 
-events {
-	worker_connections 768;
-	# multi_accept on;
-}
-
 http {
 	server {
 		listen 8080;
