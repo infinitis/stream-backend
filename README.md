@@ -4,7 +4,7 @@ Environmental Variables Required:
 
 endpoint:
 - ENDPOINT_KEY
-- PUSH_ENDPOINT
+- PUSH_ENDPOINT (empty stream disables push)
 
 pull_relay:
 - ENDPOINT_KEY
@@ -13,7 +13,6 @@ pull_relay:
 ### To Do:
 - [x] create w/ nginx + rtmp module
 - [x] reintegrate push_relay
-- [ ] fix/investigate playback issues
 - [ ] k8s
 
 ### Later
