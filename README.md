@@ -13,7 +13,8 @@ pull_relay:
 ### To Do:
 - [x] create w/ nginx + rtmp module
 - [x] reintegrate push_relay
-- [ ] k8s
+- [x] k8s
+- [ ] popout link to twitch chat
 
 ### Later
 - [ ] integrate w/ bitcoin/lightning project
