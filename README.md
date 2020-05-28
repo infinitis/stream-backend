@@ -10,6 +10,7 @@ pull_relay:
 - PULL_ENDPOINT
 
 push_relay:
+- ENDPOINT_KEY
 - PUSH_ENDPOINT
 
 ### To Do:
