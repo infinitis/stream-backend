@@ -13,7 +13,23 @@ pull_relay:
 - [x] create w/ nginx + rtmp module
 - [x] reintegrate push_relay
 - [x] k8s
-- [ ] popout link to twitch chat
+- [ ] views?
+	- [ ] title?
+	- [ ] offline header?
+	- [ ] streamer went live?
+- [ ] chat
+	- [ ] link to popout twitch chat?
+		- [ ] position?
+	- [ ] embed twitch chat?popout link to twitch chat
+- [ ] offramps
+	- [ ] test events in stream.component.js
+		- [ ] behavior when no stream
+		- [ ] behavior when stream ends
+		- [ ] behavior when stream starts
+- [ ] vods
+	- [ ] on start
+		- [ ] mv current.mp4 to old.mp4
+		- [ ] start saving to current.mp4
 
 ### Later
 - [ ] integrate w/ bitcoin/lightning project

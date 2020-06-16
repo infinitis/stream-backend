@@ -16,7 +16,7 @@ run: copy_client
 
 push:
 ifndef VERSION
-	$(MAKE) push VERSION=`git describe 2>/dev/null || cat tag`
+	$(MAKE) push VERSION=`git describe`
 else
 	cd endpoint && $(MAKE) push
 	cd pull_relay && $(MAKE) push
