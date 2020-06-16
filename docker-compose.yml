@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  endpoint:
+    build:
+      context: ./endpoint
+    environment:
+      ENDPOINT_KEY: "wheorihweoir"
+      PUSH_ENDPOINT: "rtmp://live-sea.twitch.tv/app/STREAM_KEY"
+    image: stream-backend-endpoint
+    ports:
+      - "1935:1935"
+  pull_relay:
+    build:
+      context: ./pull_relay
+    environment:
+      PULL_ENDPOINT: "rtmp://endpoint/live/"
+    image: stream-backend-pull-relay
+    ports:
+      - "8080:80"
+      - "1936:1935"
